@@ -1,2 +1,2 @@
-# Bot-Lan-amentos
+# Bot-Lancamentos
 Bot lançamentos para o RP de SFS
