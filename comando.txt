@@ -1,0 +1,39 @@
+@has_permissions(manage_messages=True)
+@bot.slash_command(name="calcular",description="calcula  os lançamentos do RP")
+async def calcular(ctx,peso:int,reutilizavel:str,destino:int):
+
+	if reutilizavel == "sim": 
+		res = (peso*40)
+		a = (peso*destino)
+		valors = abs((res-a))
+
+		embed1 = discord.Embed(title="A Recompensa do usuario",description="Bot em desenvolvimento por Tk#3615",color= 0x00bfff)
+		embed1.add_field(name="Valor:",value=f"{valors}")
+		embed1.set_footer(text="Bot aplha 0.1")
+
+
+		await ctx.respond(embed=embed1)
+
+	if reutilizavel == "não":
+		res2 = (peso*60)
+		r = (peso*destino) 
+		valorn = abs((res2-r))
+
+		embed2 = discord.Embed(title="A Recompensa do usuario",description="Bot em desenvolvimento por Tk#3615",color= 0x00bfff)
+		embed2.add_field(name="Valor:",value=f"{valorn}")
+		embed2.set_footer(text="Bot aplha 0.1")
+
+		await ctx.respond(embed=embed2)
+
+@bot.slash_command(name="segredo",descritption="o que isso faz?")
+async def segredo(ctx,
+	escolha: Option(str,"???",
+	autocomplete=discord.utils.basic_autocomplete([
+		"SOS",
+		"404",
+		"BAH"
+	]))):
+
+	if escolha == "SOS":
+		await ctx.respond(content="-. --- / .- / -. .- -.. .- / .- --.- ..- .. .-.-.- .-.-.- .-.-.-",ephemeral=True)
+
